@@ -1,0 +1,36 @@
+extends layout 
+
+
+mixin inputbox(labelText,inputType)
+ .input-box
+    label= labelText
+    input(type=inputType)
+
+mixin tableDataRows(Owner, ProductName, Key, CreatedAt, RenewAt, ExpireAt,LicenseId)
+    tr(id=LicenseId)
+        td=Owner 
+        td=ProductName
+        td=Key
+        td=CreatedAt
+        td=RenewAt 
+        td=ExpireAt
+        td
+            button(id="deleteVectorBtn" value=LicenseId)       
+                img(class="deleteVector" src="/images/VectordeleteIcon.png")
+
+
+block content 
+  .container-licenses
+    button.addLicense
+        img(class="addVector" src="/images/VectoraddIcon.png", alt="")
+    .licenseList 
+        table 
+            tr.header
+                th Owner 
+                th Product Name
+                th Key 
+                th Created at 
+                th Renew at 
+                th Expire at 
+            for item in License 
+                +tableDataRows(item.ownerId,item.productName,item.productToken,item.createdAt,item.renewAt,item.expireAt,item.id) 

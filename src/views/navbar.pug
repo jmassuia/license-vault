@@ -1,0 +1,18 @@
+.navbar
+    a.brand(href="/") 
+        img(src="/images/brandIcon.png", alt="Logo")
+        p Lkeeper
+    .buttons
+        if !filterNavItems
+            button.loginBtn
+                a(href="/login") Log in
+            span.stick
+            button.signUpBtn 
+                a(href="/signup") Sign up
+        else if filterNavItems == "login"
+            button.signUpBtn 
+                a(href="/signup") Sign up
+        else if filterNavItems == "signup"
+            button.loginBtn
+                a(href="/login") Log in
+

@@ -1,0 +1,23 @@
+extends layout 
+
+
+mixin inputbox(labelText,inputType,inputId)
+ .input-box
+    label= labelText
+    input(id=inputId type=inputType)
+
+mixin inputbox-pass(labelText,inputId)
+ .input-box
+    label= labelText
+    input(id=inputId type="password" placeholder="************")
+
+block content 
+    .login
+        form.login
+            +inputbox("E-mail","text","email")
+            +inputbox-pass("Senha","passwd")
+            .buttonSection
+                button(type="submit") Entrar
+                a(href="/reset") Resetar senha
+
+    //- img(src="/images/VaultBackground.png", alt="main background")

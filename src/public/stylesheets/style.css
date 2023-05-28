@@ -1,0 +1,260 @@
+* {
+  /* padding: 50px; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-image: url("/images/VaultBackground.png");
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+  color: #00B7FF;
+  outline: none;
+  border: none;
+}
+
+.home img {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  background-color: #ffff;
+  justify-content: space-between;
+  /* padding: 10px; */
+  height: 100px;
+}
+
+.navbar img {
+  position: relative;
+  width: 50px;
+  height: 50px;
+
+  padding-left: 20px;
+}
+
+.navbar a.brand {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar a.brand p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0078D7;
+  margin-left: 5px;
+}
+
+.navbar .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .buttons button,
+.navbar .buttons a,
+.signUp form button,
+.login form button,
+.reset form button {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 35px;
+  width: 100px;
+  color: #ffff;
+  border: none;
+  border-radius: 5px;
+
+  background-color: #0078D7;
+}
+
+.navbar .buttons p {
+  font-size: 25px;
+}
+
+.navbar .buttons .stick {
+  background-color: rgb(107, 107, 107);
+  margin: 0px 5px 0px 5px;
+  height: 50px;
+  width: 1px;
+
+}
+
+.home h1,
+form.signUp,
+form.login,
+form.reset {
+  position: absolute;
+  right: 10px;
+  color: #ffff;
+
+}
+
+.home h1 {
+  font-size: 45px;
+  font-weight: 400;
+  word-break: normal;
+  width: 500px;
+
+}
+
+.signUp,
+.login,
+.reset {
+  display: block;
+  width: 600px;
+  height: 400px;
+}
+
+.signUp .input-box,
+.login .input-box,
+.reset .input-box {
+  display: flex;
+  width: 500px;
+  margin-top: 25px;
+  background-color: #f1f1f1;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.signUp .input-box label,
+.login .input-box label,
+.reset .input-box label {
+  color: black;
+  padding: 10px;
+}
+
+.signUp .input-box input,
+.login .input-box input {
+  width: 100%;
+  height: 40px;
+  margin-left: 5px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.reset .input-box {
+  height: 45px;
+}
+
+.reset .input-box input {
+  width: 100%;
+  /* height: 40px; */
+  margin-left: 5px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.reset .input-box label {
+  font-size: 14px;
+  width: 150px;
+}
+
+.signUp .input-box input:focus,
+.login .input-box input:focus,
+.reset .input-box input:focus {
+  outline: none;
+  border-bottom: #0078D7 2px solid;
+}
+
+.signUp form button,
+.login form button,
+.reset form button {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  margin-left: 180px;
+}
+
+.signUp form button:hover,
+.login form button:hover,
+.reset form button:hover {
+  background-color: #0269bd;
+}
+
+.login form .buttonSection {
+  display: block;
+  width: 450px;
+}
+
+.login form .buttonSection a {
+
+  color: rgb(2, 69, 131);
+  margin-left: 180px;
+}
+
+
+.container-licenses {
+  display: flex;
+}
+
+.licenseList {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 8vh;
+  max-width: 90%;
+  max-height: 500px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: #d1d1d1 1px solid;
+  overflow: scroll;
+}
+
+button.addLicense {
+  margin-top: 50px;
+  margin-left: 5px;
+  background-color: #0078D7;
+  width: 50px;
+  height: 50px;
+
+  border-radius: 25px;
+}
+
+button.addLicense img {
+  width: 30px;
+  height: 30px;
+
+}
+
+td,
+th {
+  padding: 15px;
+  text-align: left;
+}
+
+td button {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+}
+
+button img.deleteVector {
+  width: 10px;
+  height: 15px;
+}
+
+button img.deleteVector:hover {
+  height: 20px;
+}
+
+th {
+  color: #0078D7;
+  border-bottom: #0078D7 2px solid;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+  position: absolute;
+  bottom: 0px;
+  /* padding: 10px; */
+  text-align: center;
+  height: 100px;
+  width: 100%;
+}

@@ -1,0 +1,21 @@
+extends layout 
+
+
+mixin inputbox(labelText,inputType,inputId)
+ .input-box
+    label= labelText
+    input(type=inputType id=inputId)
+
+mixin inputbox-pass(labelText,inputId)
+ .input-box
+    label= labelText
+    input(type="password" placeholder="************" id=inputId)
+
+block content 
+    .signUp
+        form.signUp
+            +inputbox("Nome","text","name")
+            +inputbox("Email","text","email")
+            +inputbox-pass("Senha","passwd")
+
+            button Criar conta
