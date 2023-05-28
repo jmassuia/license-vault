@@ -6,7 +6,7 @@
     "prod": "node ./src/server",
     "dev": "nodemon ./src/server",
     "bundle:dev": "npx parcel watch ./src/public/js/main.js --dist-dir ./src/public/js/dist",
-    "bundle:prod": "npx parcel ./src/public/js/main.js --dist-dir ./src/public/js/dist"
+    "bundle:prod": "npx parcel build ./src/public/js/main.js --dist-dir ./src/public/js/dist"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
