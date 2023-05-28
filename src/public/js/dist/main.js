@@ -65892,7 +65892,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 const api = (0, _axiosDefault.default).create({
-    baseURL: "http://localhost:3000/"
+    baseURL: "https://joaomassuia.tech"
 });
 module.exports = api;
 
