@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"4lc83":[function(require,module,exports) {
+})({"lW73w":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = 1234;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "b35befbcef9f2b83";
+module.bundle.HMR_BUNDLE_ID = "88025de46e22095f";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -573,7 +573,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"6oGqv":[function(require,module,exports) {
+},{}],"ecLmS":[function(require,module,exports) {
 var _core = require("@babel/core");
 var _authJs = require("./auth.js");
 var _licensesJs = require("./licenses.js");
@@ -610,10 +610,11 @@ if (deleteLicenseBtns) for(var i = 0; i < deleteLicenseBtns.length; i++)deleteLi
         var buttonValue = buttonElement.value;
         // Do something with the button value
         (0, _licensesJs.disableLicense)(buttonValue);
+        location.reload();
     }
 });
 
-},{"@babel/core":"5Gn2D","./auth.js":"fov0Z","./licenses.js":"2Td6N"}],"5Gn2D":[function(require,module,exports) {
+},{"@babel/core":"5Gn2D","./auth.js":"dacDG","./licenses.js":"28xEf"}],"5Gn2D":[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -65829,7 +65830,7 @@ function parseAsync(...args) {
     return (0, _rewriteStackTrace.beginHiddenCallStack)(parseRunner.async)(...args);
 }
 
-},{"bdb7dc02531bc034":"AqTPz","fca888de4a211de4":"68Khf","557acfd3089a43c2":"cgQeK","2c65ef06b46d1d50":"h0ilq","467ad0b13b6f91c9":"306ma"}],"fov0Z":[function(require,module,exports) {
+},{"bdb7dc02531bc034":"AqTPz","fca888de4a211de4":"68Khf","557acfd3089a43c2":"cgQeK","2c65ef06b46d1d50":"h0ilq","467ad0b13b6f91c9":"306ma"}],"dacDG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "login", ()=>login);
@@ -65837,6 +65838,7 @@ parcelHelpers.export(exports, "reset", ()=>reset);
 parcelHelpers.export(exports, "signUp", ()=>signUp);
 var _apiConfigJs = require("./api.config.js");
 var _apiConfigJsDefault = parcelHelpers.interopDefault(_apiConfigJs);
+var _alertJs = require("./alert.js");
 const login = async (email, password)=>{
     const data = {
         email,
@@ -65851,7 +65853,8 @@ const login = async (email, password)=>{
             }, 1500);
         }
     } catch (err) {
-        console.log(err.message);
+        console.log(err);
+        (0, _alertJs.showAlert)("Login error", err.response.data.message);
     }
 };
 const reset = async (email, password)=>{
@@ -65865,7 +65868,7 @@ const reset = async (email, password)=>{
             location.assign("/login");
         }, 1500);
     } catch (err) {
-        console.log(err.message);
+        (0, _alertJs.showAlert)("Reset error", err.response.data.message);
     }
 };
 const signUp = async (name, email, password)=>{
@@ -65884,12 +65887,12 @@ const signUp = async (name, email, password)=>{
     }
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./api.config.js":"eJRR5"}],"eJRR5":[function(require,module,exports) {
+},{"./api.config.js":"kygcv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./alert.js":"dpOzM"}],"kygcv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 const api = (0, _axiosDefault.default).create({
-    baseURL: undefined
+    baseURL: "http://localhost:3000/"
 });
 module.exports = api;
 
@@ -68622,7 +68625,25 @@ Object.entries(HttpStatusCode).forEach(([key, value])=>{
 });
 exports.default = HttpStatusCode;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2Td6N":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dpOzM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "hideAlert", ()=>hideAlert);
+parcelHelpers.export(exports, "showAlert", ()=>showAlert);
+const hideAlert = ()=>{
+    const el = document.querySelector(".error");
+    if (el) el.parentElement.removeChild(el);
+};
+const showAlert = (title, message)=>{
+    hideAlert();
+    //Creating alerts
+    const markup = `<div class="error"><div class="error__title"><h2 class="heading-secondary heading-secondary--error">${title}</h2><h2 class="error__emoji">😢 🤯 </h2></div><div class="error__msg">${message}</div></div>`;
+    document.querySelector("body").insertAdjacentHTML("afterbegin", markup);
+    //Hiding alerts after 5s
+    window.setTimeout(hideAlert, 5000);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"28xEf":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "disableLicense", ()=>disableLicense);
@@ -68636,6 +68657,6 @@ const disableLicense = async (id)=>{
     }
 };
 
-},{"./api.config.js":"eJRR5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["4lc83","6oGqv"], "6oGqv", "parcelRequiref22b")
+},{"./api.config.js":"kygcv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["lW73w","ecLmS"], "ecLmS", "parcelRequiref22b")
 
 //# sourceMappingURL=main.js.map

@@ -197,7 +197,7 @@ form.reset {
   margin-bottom: 20px;
   margin-left: 8vh;
   max-width: 90%;
-  max-height: 500px;
+  max-height: 300px;
   background-color: white;
   border-radius: 5px;
   box-shadow: #d1d1d1 1px solid;
@@ -244,6 +244,53 @@ button img.deleteVector:hover {
 th {
   color: #0078D7;
   border-bottom: #0078D7 2px solid;
+}
+
+.error {
+  background-color: #faf6f6;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: 80rem;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  border: #0078D7 1px solid;
+}
+
+.error__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  font-size: 16px;
+  border-bottom: #0078D7 2px solid;
+  box-shadow: rgba(107, 107, 107, 0.3);
+}
+
+.error__title h2 {
+  font-weight: 100;
+}
+
+.error__emoji {
+  font-size: 15px;
+  margin-left: 1rem;
+}
+
+.error__msg {
+  font-size: 16px;
+  font-weight: 100;
+  max-width: 50rem;
+  margin: 0 auto;
 }
 
 .footer {

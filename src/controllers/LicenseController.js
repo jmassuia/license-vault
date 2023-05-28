@@ -2,8 +2,6 @@ const connection = require('../migrations/connection');
 
 module.exports = {
     async getLicenses(req, res) {
-        //Get user id
-        const id = req.params;
         //List all Licenses from this user id
         const allLicenses = await connection('Licenses').select('*');
 

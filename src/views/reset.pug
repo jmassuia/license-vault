@@ -4,12 +4,12 @@ extends layout
 mixin inputbox(labelText,inputType,inputId)
  .input-box
     label= labelText
-    input(type=inputType id=inputId)
+    input(type=inputType id=inputId required)
 
 mixin inputbox-pass(labelText,inputId)
  .input-box
     label= labelText
-    input(type="password" placeholder="************" id=inputId)
+    input(type="password" placeholder="************" id=inputId required)
 
 block content 
     .reset

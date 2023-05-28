@@ -1,4 +1,5 @@
 import api from "./api.config.js";
+import { showAlert } from './alert.js';
 
 export const login = async (email, password) => {
     const data = { email, password }
@@ -13,7 +14,8 @@ export const login = async (email, password) => {
         }
     }
     catch (err) {
-        console.log(err.message)
+        console.log(err)
+        showAlert("Login error", err.response.data.message);
     }
 }
 
@@ -29,7 +31,7 @@ export const reset = async (email, password) => {
         }
     }
     catch (err) {
-        console.log(err.message)
+        showAlert("Reset error", err.response.data.message);
     }
 }
 
@@ -45,6 +47,6 @@ export const signUp = async (name, email, password) => {
         }
     }
     catch (err) {
-        console.log(err.message)
+        console.log(err.message);
     }
 }

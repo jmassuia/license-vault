@@ -16,6 +16,7 @@ if (loginForm) {
         const passwd = document.querySelector('form.login input#passwd').value;
 
         login(email, passwd);
+
     })
 }
 if (signupForm) {
@@ -51,6 +52,7 @@ if (deleteLicenseBtns) {
 
                 // Do something with the button value
                 disableLicense(buttonValue);
+                location.reload();
             }
         })
     }

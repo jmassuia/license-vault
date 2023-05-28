@@ -6,9 +6,8 @@ mixin inputbox(labelText,inputType)
     label= labelText
     input(type=inputType)
 
-mixin tableDataRows(Owner, ProductName, Key, CreatedAt, RenewAt, ExpireAt,LicenseId)
+mixin tableDataRows(ProductName, Key, CreatedAt, RenewAt, ExpireAt,LicenseId)
     tr(id=LicenseId)
-        //- td=Owner 
         td=ProductName
         td=Key
         td=CreatedAt
@@ -26,7 +25,6 @@ block content
     .licenseList 
         table 
             tr.header
-                //- th Owner 
                 th Product Name
                 th Key 
                 th Created at 

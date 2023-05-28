@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "prod": "node ./src/server",
-    "dev": "nodemon ./src/server"
+    "dev": "nodemon ./src/server",
+    "bundle:js": "npx parcel watch ./src/public/js/main.js --dist-dir ./src/public/js/dist"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",

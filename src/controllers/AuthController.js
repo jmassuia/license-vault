@@ -9,7 +9,7 @@ module.exports = {
         const { email, password } = req.body;
 
         if (!email || !password) {
-            await res.status(500).json({
+            return res.status(500).json({
                 message: 'Missing user or password.'
             });
         }
@@ -18,11 +18,17 @@ module.exports = {
             .from('Users')
             .where({ email }).select("id", "password");
 
+        if (!user) {
+            return res.status(500).json({
+                message: 'User does not exist!'
+            })
+        }
+
         //Compare pass
         const passMatch = await bcrypt.compare(password, user.password);
 
         if (!passMatch) {
-            res.status(500).json({
+            return res.status(500).json({
                 message: 'Email or password inconsistent or register does not exist.'
             })
         }
@@ -35,7 +41,7 @@ module.exports = {
         const { name, email, password } = req.body;
 
         if (!name || !email || !password) {
-            await res.status(500).json({
+            return res.status(500).json({
                 message: "Please, provide the data required in the form to create an account!"
             })
         }
@@ -63,7 +69,7 @@ module.exports = {
 
         console.log(isValidEmail);
         if (!isValidEmail) {
-            await res.status(500).json({
+            return res.status(500).json({
                 message: "Please, provide valid email address!"
             })
         }

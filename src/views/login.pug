@@ -4,14 +4,14 @@ extends layout
 mixin inputbox(labelText,inputType,inputId)
  .input-box
     label= labelText
-    input(id=inputId type=inputType)
+    input(id=inputId type=inputType required)
 
 mixin inputbox-pass(labelText,inputId)
  .input-box
     label= labelText
-    input(id=inputId type="password" placeholder="************")
+    input(id=inputId type="password" placeholder="************" required)
 
-block content 
+block content
     .login
         form.login
             +inputbox("E-mail","text","email")
@@ -19,5 +19,4 @@ block content
             .buttonSection
                 button(type="submit") Entrar
                 a(href="/reset") Resetar senha
-
     //- img(src="/images/VaultBackground.png", alt="main background")
