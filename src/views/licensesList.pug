@@ -8,7 +8,7 @@ mixin inputbox(labelText,inputType)
 
 mixin tableDataRows(Owner, ProductName, Key, CreatedAt, RenewAt, ExpireAt,LicenseId)
     tr(id=LicenseId)
-        td=Owner 
+        //- td=Owner 
         td=ProductName
         td=Key
         td=CreatedAt
@@ -26,11 +26,11 @@ block content
     .licenseList 
         table 
             tr.header
-                th Owner 
+                //- th Owner 
                 th Product Name
                 th Key 
                 th Created at 
                 th Renew at 
                 th Expire at 
             for item in License 
-                +tableDataRows(item.ownerId,item.productName,item.productToken,item.createdAt,item.renewAt,item.expireAt,item.id) 
+                +tableDataRows(item.productName,item.productToken,item.createdAt,item.renewAt,item.expireAt,item.id) 
