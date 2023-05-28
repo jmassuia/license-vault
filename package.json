@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prod": "node server",
+    "prod": "node ./src/server",
     "dev": "nodemon ./src/server"
   },
   "dependencies": {

@@ -6,6 +6,3 @@ node_modules
 
 # Environment variables
 *.env
-
-# Migrations
-migrations
