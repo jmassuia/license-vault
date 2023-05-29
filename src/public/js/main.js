@@ -52,7 +52,6 @@ if (deleteLicenseBtns) {
 
                 // Do something with the button value
                 disableLicense(buttonValue);
-                location.reload();
             }
         })
     }
